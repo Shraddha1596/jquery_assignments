@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function()
+            {
+                setInterval(function() 
+                {
+    
+                    // console.log("testing");
+       
+                    var url = 'viewdata.php';
+
+                    $.ajax(
+                    {
+                        type: "POST",
+                        url: url,
+           
+                        success: function(data)
+                        {
+                            var html = '';
+                             console.log(data);
+
+                            //var d = JSON.stringify(data)
+                            $.each(JSON.parse(data), function(i, item) 
+                            {
+               
+                                html += '<tr>';
+                                html += '<td>' +item.name+ '</td>';
+                                html += '<td>' +item.email+ '</td>';
+                                html += '<td>' +item.message+ '</td>';
+                                html += '<td>' +item.date+ '</td>';                    
+                                html += '</tr>';
+                    
+                            });
+                            $('#display').html(html);
+                        }
+
+                    });
+  
+                }, 60 * 100);
+
+            })
+        </script>
+    </head>
+    <body>
+            <form method="post" class="text-center border border-light p-5"  >
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Message</td>
+                    <td>Date</td>
+                </tr>
+            </thead>
+            <tbody id="display"></tbody>
+            <tfoot>
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Message</td>
+                    <td>Date</td>
+               </tr>
+            </tfoot>
+        </table>
+        </form>
+    </body>
+</html>

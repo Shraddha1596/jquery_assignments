@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#add").click(function(){
+                    $("#show").append("<div><input type='text'>&nbsp;&nbsp;<button>browse</button>&nbsp;&nbsp;<select><option value='primary'>primary</option><option value='secondary'>Secondary</option></select></div>");
+                });
+
+                $("#remove").click(function(){
+                    $("#show").children().last().remove();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>PROPERTY IMAGE</div>
+        <div style=" width:100%; ">
+            <div style="width:19% ;float:left; ">
+                property image
+            </div>
+            
+            <div  style="width:80%; float:right;">
+                <div id="show" ></div><br>
+                <button id="add">add</button>
+                <button id="remove">remove</button>
+            </div>
+        </div>
+                               
+    </body>
+</html>

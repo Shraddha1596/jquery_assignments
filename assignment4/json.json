@@ -1,0 +1,27 @@
+
+  
+    [
+	
+        {
+            "firstname" : "Shraddha",
+            "lastname" : "Singh",
+            "dob": "15 Feb 1996"
+        },
+        {
+            "firstname" : "Sakshi",
+            "lastname" : "Sharma",
+            "dob": "12 March 1997"
+        },
+        {
+            "firstname" : "kunal",
+            "lastname" : "meena",
+            "dob": "21 august 1996"
+        },
+        {
+            "firstname" : "Sahil",
+            "lastname" : "Siwatch",
+            "dob": "12 march 1996"
+        }
+    ]
+
+

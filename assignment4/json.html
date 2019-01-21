@@ -1,0 +1,58 @@
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+            <!-- <script src="json.json"></script> -->
+            <script>
+                $(document).ready(function()
+                {
+                    var url="json.json";
+                    console.log("testing");
+                    $.ajax(
+                    {
+                        type:"POST",
+                        url:url,
+
+                        success:function(data)
+                        {
+                            // console.log(data);
+                            
+                            var html='';
+
+                            $.each(data,function(i,item) 
+                            {
+                                html +='<tr>';
+                                html +='<td>'+item.firstname+'</td>';
+                                html +='<td>'+item.lastname+'</td>';
+                                html +='<td>'+item.dob+'</td>';
+                                html += '</tr>';
+
+                            });
+                            $('#body').html(html);
+                        }
+                    });
+
+                });
+            </script>
+    </head>
+    <body style="text-align: center; align-content: center">
+        <h3 >JSON PRACTICE ASSIGNMENT</h3>
+        <table align="center" border="1">
+            <thead style="background-color: aqua;">
+                <tr>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Date of birth</td>
+                </tr>
+            </thead>
+            <tbody id="body"></tbody>
+            <tfoot style="background-color: aqua;">
+                <tr>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Date of birth</td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                
+                $("a").click(function(event){
+                    $(this).css("color","blue");
+                    event.preventDefault();
+                });
+
+                $("a").mouseenter(function(){
+                    $(this).css("color", "green");
+                });
+                $("a").mouseleave(function(){
+                    $(this).css("color", "yellow");
+                });
+                
+            });
+            
+        </script>
+        <style>
+              a{
+                  font-size:30px;
+              } 
+        </style>
+    </head>
+    <body>
+        <!-- <form action="form.php"> -->
+            <a href="form.php" >I am a link</a>
+        <!-- </form> -->
+    </body>
+</html>

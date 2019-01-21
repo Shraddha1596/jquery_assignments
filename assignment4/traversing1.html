@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script>
+            $(document).ready(function()
+            {
+                $("#first").click(function()
+                {
+                    $(".child").prop('checked',  $("#first").prop("checked"));    
+                    // $('input:checkbox').not(this).prop('checked', this.checked);
+                });
+                $("#child1").click(function(){
+                    $(".parent").prop('checked', $("#child1").prop('checked'));
+                });
+                $("#child2").click(function(){
+                    $(".parent").prop('checked', $("#child2").prop('checked'));
+                });
+
+                 $("#second").click(function()
+                {
+                    $(".second2").prop('checked',  $("#second").prop("checked"));    
+                    // $('input:checkbox').not(this).prop('checked', this.checked);
+                });
+                $("#child11").click(function(){
+                    $(".second").prop('checked', $("#child11").prop('checked'));
+                });
+                $("#child22").click(function(){
+                    $(".second").prop('checked', $("#child22").prop('checked'));
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <form>
+            <div>
+                <ul style="list-style: none"><input id="first" class="parent" type="checkbox">Parent1
+                    <li ><input type="checkbox" class="child" id="child1" name="child1">Child 1</li>
+                    <li> <input type="checkbox" class="child" id="child2" name="child2">Child 2</li>
+                </ul>
+                
+            </div>
+            <div>
+                    <ul style="list-style: none"><input id="second" class="second" type="checkbox">Parent2
+                        <li ><input type="checkbox" id="child11" class="second2" name="child12">Child 12</li>
+                        <li> <input type="checkbox" id="child22" class="second2" name="child22">Child 22</li>
+                    </ul>
+                </div>
+        </form>
+    </body>
+</html>
